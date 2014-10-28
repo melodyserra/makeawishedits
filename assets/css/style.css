@@ -1,0 +1,61 @@
+a.navbar-brand {
+	padding-top: 5px;
+}
+
+#logo {
+	width: 100px;
+}
+
+#footerlogo {
+	width: 100px;
+	height: 40px;
+}
+
+#hero-img {
+	margin:0 0 20px 0;
+	background: url("../img/hero-img.jpg") no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+}
+
+#hero-img h1 {
+	padding: 150px 0px;
+	margin-top:70px;
+	color: #FFFFFF; 
+}
+/*#hero-img img{
+	width: 100%;
+	height: auto;
+}*/
+
+.fancybox-title {
+	text-align: justify;
+}
+/*.navbar-default {
+	background: #006BB6;
+}*/
+
+/*
+#make-a-wish-menu a {
+	color: #FFFFFF;
+}*/
+
+
+@media (max-width: 770px) {
+	#hero-img {
+		background-position: 50% 50%;
+	}
+}
+
+.footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	background: #F0F0F0;
+}
+
+/*login/signup*/
+
+#loginpage {
+	background: #F0F0F0;
+}

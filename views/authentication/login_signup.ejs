@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+<div class = "container-fluid">
+<div id = "loginpage">
+<h1>Login</h1>
+  <form action="/login" method ="POST">
+  	<!-- (p>label+input:t)*2 -->
+    <p>
+      <label for="user">Username:</label>
+      <input type="text" name="username" id="user" autofocus>
+    </p>
+    <p>
+      <label for="pass">Password:</label>
+      <input type="password" name="password" id="pass">
+    </p>
+    <p>
+      <input type="submit" value="Log In" class = "btn btn-primary">
+    </p>
+  </form>
+  <p> Don't have an account? Create one below:</p>
+
+<h1>Sign up form</h1>
+ <p>
+ <% if(typeof message !== 'undefined') { %>
+ <%= message%>
+ <% } %>
+</p>
+  <br>
+  <form action="/signup" method ="POST">
+    <p>
+      <label for="user">Username:</label>
+      <input type="text" name="username" id="user" autofocus>
+    </p>
+    <p>
+      <label for="pass">Password:</label>
+      <input type="password" name="password" id="pass">
+    </p>
+    <p>
+      <input type="submit" value="Sign up!" class = "btn btn-primary">
+    </p>
+  </form>
+</div>
+</div>
+<% include ../partials/footer %>
