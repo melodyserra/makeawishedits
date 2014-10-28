@@ -60,12 +60,26 @@ passport.deserializeUser(function(id, done){
 });
 
 
+// app.get("/post", isAuthenticated, function(req,res){
+// 	res.render("account/post", {user : req.user});
+// 	// in views file
+// });
+
 app.get('/admin', function(req,res){
   if(!req.user) {
     res.render("authentication/login_signup", { username: ""});
   }
   else{
     res.redirect('/post');
+  }
+});
+
+app.get('/post', function(req,res){
+  if(!req.user) {
+    res.redirect("/admin");
+  }
+  else{
+    res.render('account/post');
   }
 });
 
