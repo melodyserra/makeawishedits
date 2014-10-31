@@ -28,6 +28,7 @@
 // db.Sequelize = Sequelize;
 
 // module.exports = db;
+
 "use strict";
  
 var fs        = require("fs");
