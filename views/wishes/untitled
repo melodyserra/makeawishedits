@@ -1,98 +1,13 @@
 <% include ../partials/header %>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			// http://fancyapps.com/fancybox/#examples
-			$(".fancybox").fancybox({
-				maxHeight: 700,
-				maxWidth: 900,
-				minHeight: 350,
-				minWidth: 350,
-				helpers : {
-	        		title: {
-	            		type: 'outside',
-	        		}
-	    		},
-	    		nextEffect: 'fade',
-	    		prevEffect: 'fade'
-			});
-		});
-
-		var titleSave;
-
-		$(document).on("mouseover", ".fancybox", function() {
-			titleSave = $(this).attr("title");
-			$(this).attr("title", "");
-		}).on("mouseout", ".fancybox", function() {
-			$(this).attr("title", titleSave);
-		}).on("click", ".fancybox", function() {
-			$(this).attr("title", titleSave);
-		});
-	</script>
-
-<div class="container" id="hero-img" img src="assets/img/hero-img.jpg">
+<div class="container" id="hero-img">
 		<h1>Welcome to the Wish List-Click on an image below to read more about the child's wish</h1>
 	</div>
 	<div class="container child-pics">
 		<div class="row">
-			
-
-		<% wishes.forEach(function(wish,index){ %>
-				
-		<% if(index % 4 === 0){ %>
-
-			</div>
-				<div class="row wish-image-grid">
-					<div class="col-sm-3">
-						<div class="wish-wrapper">
-							<a rel="gallery" class="fancybox" href="http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%= wish.getImageDimensions() %>/filename.jpg" title="<%= wish.wish%>" style="background:url(http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%= wish.getImageDimensions() %>/filename.jpg);"  >
-
-							<!-- <img class ="img-responsive" src="http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%=wish.getImageDimensions() %>/filename.jpg" alt=""/> -->
-							</a>
-
-							<div class=info>Name: <%=   wish.name %>
-								<br>
-								Age: <%=   wish.age %>
-								<br>
-								Illness: <%=   wish.illness %>
-								<br>
-								<%=   wish.summary %>
-							</div>
-						</div>	
-					</div>
-				
-				<% } else { %>
-			
-					<div class="col-sm-3">
-						<div class="wish-wrapper">
-							<a rel="gallery" class="fancybox" href="http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%= wish.getImageDimensions() %>/filename.jpg" title="<%= wish.wish%>" style="background:url(http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%= wish.getImageDimensions() %>/filename.jpg);"  >
-
-							<!-- <img class ="img-responsive" src="http://www.ucarecdn.com/<%=wish.image%>/-/resize/<%=wish.getImageDimensions() %>/filename.jpg" alt=""/> -->
-							</a>
-
-							<div class="info">Name: <%=   wish.name %>
-								<br>
-								Age: <%=   wish.age %>
-								<br>
-								Illness: <%=   wish.illness %>
-								<br>
-								<%=   wish.summary %>
-							</div>
-						</div>
-					</div>
-				
-				<% } %>
-			
-				<% }) %>
-		<!-- </div> -->
-
-
-			
-
-<!-- 				<a rel="gallery" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit" class = "fancybox" href="img/big_image_3.jpg">
-
-<img src="img/small_image_3.jpg" alt="" class="img-responsive" />
- -->				<!-- </a>
+			<div class="col-sm-3">
+				<a rel="gallery" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet augue et magna interdum hendrerit" class = "fancybox" href="img/big_image_3.jpg"><img src="img/small_image_3.jpg" alt="" class="img-responsive" />
+				</a>
 				<p>
 				Placeholder text, summary of wishes will be placed here. The summary will most likely be 2-3 sentences long. 
 				</p>
@@ -179,11 +94,44 @@
 				<p>
 				Placeholder text, summary of wishes will be placed here. The summary will most likely be 2-3 sentences long. 
 				</p>
-			</div> -->
-		<!-- </div> -->
+			</div>
+		</div>
 	</div>
 
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!--Fancybox-->
+	<script src="libraries/fancybox-2.1.5/source/jquery.fancybox.pack.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".fancybox").fancybox();
+			$(".fancybox").fancybox({
+	    		helpers : {
+	        		title: {
+	            		type: 'outside',
+	        		}
+	    		},
+	    		nextEffect: 'fade',
+	    		prevEffect: 'fade'
+			});
+		});
+
+		var titleSave;
+
+		$(document).on("mouseover", ".fancybox", function() {
+			titleSave = $(this).attr("title");
+			$(this).attr("title", "");
+		}).on("mouseout", ".fancybox", function() {
+			$(this).attr("title", titleSave);
+		}).on("click", ".fancybox", function() {
+			$(this).attr("title", titleSave);
+		});
+	</script>
 </div>
 </body>
 

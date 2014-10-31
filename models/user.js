@@ -23,33 +23,37 @@ module.exports = function(sequelize, DataTypes) {
         comparePass: function(userpass, dbpass){ //userpass is plain text, second one is a hashed password in db, always make sure it is in this order
           return bcrypt.compareSync(userpass, dbpass); //returns true if same, false if not
         },
-        createNewUser: function(username, password, err, success){ //err and success are callbacks, this takes in a username and password and validates that they meet requirements
-          if(password.length<6){
-            err({message: "Password should be more than six characters"});
-          }
-          else{
-            User.create({
-              username: username,
-              password: this.encryptPass(password)
-            }).done(function(error, user){ //done is a sqlize method
-              if(error){
-                cosole.log(error)
-                if(error.name === 'SequelizeValidationError'){
-                  err({message: "Your username should be at least six characters long"})
-                }
-                else if(error.name === 'SequelizeUniqueConstraintError'){
-                  err({message: "An account with the username already exists"})
-                }
-                else{
-                  success({message: "Account created, please log in now"})
-                }
+         createNewUser:function(username, password, err, success ) {
+        if(password.length < 6) {
+          err({message: "Password should be more than six characters"});
+        }
+        else{
+        User.create({
+            username: username,
+            password: this.encryptPass(password)
+          }).done(function(error,user) {
+            if(error) {
+              console.log(error)
+              if(error.name === 'SequelizeValidationError'){
+              err({message: 'Your username should be at least 6 characters long', username: username});
+            }
+              else if(error.name === 'SequelizeUniqueConstraintError') {
+              err({message: 'An account with that username already exists', username: username});
               }
-            });
-          }
-        },
-      } //close classMethods
+            }
+            else{
+              // no need for a success message now that we are redirecting with passport
+              // if you want to send a message, use res.render in app.js
+              // success({message: 'Account created, please log in now'});
+              success();
+            }
+          });
+        }
+      },
+      } // close classMethods
     } //close classMethods outer
-    ); //close define user
+
+  ); // close define user
 
 
 //Passport

@@ -12,5 +12,9 @@
 }
 
 .page {
-	backrground: #F0F0F0;
+	background: #F0F0F0;
+}
+
+.postcontainer {
+	margin-right: 50px;
 }

@@ -23,6 +23,9 @@ module.exports = {
       summary: {
         type: DataTypes.TEXT
       },
+      image: {
+        type: DataTypes.STRING
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE

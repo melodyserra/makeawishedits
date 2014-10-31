@@ -9,7 +9,7 @@ module.exports = {
         type: DataTypes.INTEGER
       },
       username: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
         unique: true,
         allowNull: false //always need to have some kind of text
       },
