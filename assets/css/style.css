@@ -1,9 +1,27 @@
+/*Font Face Declarations*/
+@font-face {
+    font-family: CenturySchoolbook;
+    src: url(/fonts/century_schoolbook.ttf);
+}
+@font-face {
+    font-family: CenturySchoolbookHeavy;
+    src: url(/fonts/century_schoolbook_heavy.ttf);
+}
+@font-face {
+    font-family: CenturySchoolbookHeavyItalic;
+    src: url(/fonts/century_schoolbook_heavy_italic.ttf);
+}
+@font-face {
+    font-family: CenturySchoolbookItalic;
+    src: url(/fonts/century_schoolbook_italic.ttf);
+}
+
 a.navbar-brand {
 	padding-top: 5px;
 }
 
 #logo {
-	width: 100px;
+	width: 170px;
 }
 
 #footerlogo {
@@ -11,21 +29,28 @@ a.navbar-brand {
 	height: 40px;
 }
 
-#hero-img {
+/*#hero-img {
 	margin:0 0 20px 0;
 	background: url("../img/hero-img.jpg") no-repeat;
 	background-position: 0 0;
 	background-size: cover;
+}*/
+
+#header {
+	background-color: #006bb6;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
-#hero-img h1 {
-	padding: 150px 0px;
-	margin-top:70px;
+#container-text {
+	/*padding: 150px 0px;*/
+	/*margin-top:70px;*/
 	color: #FFFFFF;
 	font-weight: bold;
 	text-shadow: 1px 1px 1px #000;
-	font-family: 'Tangerine', serif;
-	font-size: 48px;
+	font-size: 40px;
+	font-family: CenturySchoolbookItalic;
+	text-align: center;
 }
 /*#hero-img img{
 	width: 100%;
@@ -34,10 +59,13 @@ a.navbar-brand {
 
 .fancybox-title {
 	text-align: justify;
+	font-family: CenturySchoolbook;
 }
-/*.navbar-default {
-	background: #006BB6;
-}*/
+.navbar-default {
+	background: #F0F0F0;
+	border: 0px;
+	box-shadow: none;
+}
 
 /*
 #make-a-wish-menu a {
@@ -71,6 +99,7 @@ a.fancybox {
 	padding-bottom: 20px;
 	text-align: center;
 	background: #F0F0F0;
+	font-family: CenturySchoolbook;
 }
 
 /*login/signup*/
@@ -82,9 +111,11 @@ a.fancybox {
 .info {
 	/*background: #006BB6;*/
 	color: #FFFFFF;
-	background: rgb(0,107,182) ; opacity: 0.6;
+	background: #006bb6;
+	/*background: rgb(0,107,182) ; opacity: 0.6;*/
 	padding: 10px;
 	height:120px;
+	font-family: CenturySchoolbook;
 }
 
 @media (max-width: 770px) {
