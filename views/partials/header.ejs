@@ -50,8 +50,8 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="make-a-wish-menu">
 	      <ul class="nav navbar-nav navbar-left">
-	        <li><a href="/">Show All Wish Stories</a></li>
-	        <li><a href="https://sf.wish.org/ways-to-help/giving/donate">Support a Wish</a></li>
+	        <!-- <li><a href="/">Show All Wish Stories</a></li> -->
+	        <!-- <li><a href="https://sf.wish.org/ways-to-help/giving/donate">Support a Wish</a></li> -->
 	       </ul>
 	       <% if(typeof user !== 'undefined'){ %>
 	        	<ul class="nav navbar-nav navbar-right">
@@ -60,12 +60,12 @@
 	        <% } %>
 	      <form class="navbar-form navbar-right" role="search" method="get" action="/search">
 	      	<div class="pull-right">
-	        	<a href="#" class="btn btn-primary">Donate</a>
+	        	<a href="https://sf.wish.org/ways-to-help/giving/donate" class="btn btn-primary">Donate</a>
 	        </div>
 	        <div class="clearfix"></div>
 	        <div class="row margin-top-20">
 	        	<div class="col-sm-6">
-	        		<a href="#" class="btn btn-info">Show All Wish Stories</a>
+	        		<a href="/" class="btn btn-info">Show All Wish Stories</a>
 	        	</div>
 	        	<div class="col-sm-6">
 	        		<input name="searchQuery" type="text" class="form-control" placeholder="Find a Wish" value="<%= wishQuery %>">
