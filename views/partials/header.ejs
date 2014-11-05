@@ -51,7 +51,6 @@
 	    <div class="collapse navbar-collapse" id="make-a-wish-menu">
 	      <ul class="nav navbar-nav navbar-left">
 	        <li><a href="/">Show All Wish Stories</a></li>
-	    <!--     <li><a href="/">Find a Wish</a></li> -->
 	        <li><a href="https://sf.wish.org/ways-to-help/giving/donate">Support a Wish</a></li>
 	       </ul>
 	       <% if(typeof user !== 'undefined'){ %>
@@ -60,7 +59,11 @@
 	        	</ul>
 	        <% } %>
 	      <form class="navbar-form navbar-right" role="search" method="get" action="/search">
-	        <div class="form-group">
+	      	<div class="pull-right">
+	        	<a href="#" class="btn btn-primary">Donate</a>
+	        </div>
+	        <div class="clearfix"></div>
+	        <div class="margin-top-20">
 	          <input name="searchQuery" type="text" class="form-control" placeholder="Find a Wish" value="<%= wishQuery %>">
 	        </div>
 	      </form>
